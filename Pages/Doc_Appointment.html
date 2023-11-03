@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment with Doctor Smith</title>
+    <style>
+        /* Reset some default browser styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Style the header/navigation bar */
+        header {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        
+        .specialty {
+            color: #FFD700; /* Yellow color for doctor's specialty */
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin-right: 20px;
+        }
+        
+        nav li {
+            margin-right: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #FFD700;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #FFD700; /* Yellow color on hover */
+        }
+        
+        /* Style the main content */
+        main {
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #FFD700;
+        }
+        
+        /* Style for button */
+        .fancy-button {
+            background-color: #007BFF; /* Blue color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .fancy-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: black; /* Set text color to black for table cells */
+        }
+
+        th {
+            background-color: #007BFF;
+        }
+
+        /* Style for labels */
+        label {
+            color: black; /* Set text color to black for labels */
+        }
+
+        /* Style for headings */
+        h1, h2 {
+            color: black; /* Set text color to black for headings */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/DoctorsClinic_Project/Image/logo.png" alt="Hospital Logo">
+            <h1><span class="specialty">Doctor Smith's Clinic</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <!-- Add navigation links here -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Book an Appointment with Doctor Smith</h1>
+        <br>
+        <p>
+    <form id="appointmentForm">
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" required><br><br>
+
+        <label for="patientAge">Patient Age:</label>
+        <input type="number" id="patientAge" name="patientAge" required><br><br>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
+
+        <label for="day">Select a Day:</label>
+        <select id="day" name="day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br><br>
+        
+        <label for="timing">Select a Timing:</label>
+        <select id="timing" name="timing">
+            <option value="10am-12pm">10 a.m. - 12 p.m.</option>
+            <option value="6pm-8pm">6 p.m. - 8 p.m.</option>
+        </select><br><br>
+        
+        <label for="purpose">Purpose of Appointment:</label>
+        <input type="text" id="purpose" name="purpose" required><br><br>
+
+        <!-- Apply the "fancy-button" class to the button -->
+        <button type="button" id="bookAppointment" class="fancy-button">Book Appointment</button>
+    </form>
+
+    <script>
+        document.getElementById("bookAppointment").addEventListener("click", function() {
+            // Get the form values
+            var patientName = document.getElementById("patientName").value;
+            var patientAge = document.getElementById("patientAge").value;
+            var contactNumber = document.getElementById("contactNumber").value;
+            var day = document.getElementById("day").value;
+            var timing = document.getElementById("timing").value;
+            var purpose = document.getElementById("purpose").value;
+
+            // Create a table to display appointment details
+            var table = "<table>";
+            table += "<tr><th>Patient Name</th><th>Patient Age</th><th>Contact Number</th><th>Day</th><th>Timing</th><th>Purpose</th></tr>";
+            table += "<tr><td>" + patientName + "</td><td>" + patientAge + "</td><td>" + contactNumber + "</td><td>" + day + "</td><td>" + timing + "</td><td>" + purpose + "</td></tr>";
+            table += "</table>";
+
+            // Display the table with appointment details(Ritasree Deb Roy)
+            var appointmentDetails = document.getElementById("appointmentDetails");
+            appointmentDetails.innerHTML = table;
+        });
+    </script>
+
+            </form>
+        </p>
+        <h2>Appointment Details:</h2>
+        <div id="appointmentDetails"></div>
+    </main>
+    <script>
+        document.getElementById("bookAppointment").addEventListener("click", function() {
+            // JavaScript code here
+        });
+    </script>
+</body>
+</html>
